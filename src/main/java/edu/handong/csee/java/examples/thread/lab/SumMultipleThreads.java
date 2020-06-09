@@ -32,6 +32,11 @@ public class SumMultipleThreads implements Runnable{
 			Thread thread = new Thread(runner);
 			thread.start();
 			threadsForSubSum.add(thread);
+			try {
+				thread.join();
+			} catch (Exception e) {
+			}
+			
 		}
 
 		long grandTotal = 0;
